@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 4 · OAuth client</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="client.js" defer></script>
+</head>
+<body>
+<main>
+  <p class="eyebrow">OAuth 2 in Action · Chapter 4, exercise 2</p>
+  <h1>OAuth client</h1>
+  <p>Read, add, and delete words using independent read, write, and delete scopes.</p>
+  <p id="variant"></p>
+  <dl>
+    <dt>Access token</dt><dd id="access-token">NONE</dd>
+    <dt>Refresh token</dt><dd id="refresh-token">NONE</dd>
+    <dt>Scope</dt><dd id="scope">NONE</dd>
+  </dl>
+  <div class="actions">
+    <a class="button" href="/authorize">Get OAuth token</a>
+    <button data-route="/get_words" type="button">Read words</button>
+    <label>Word <input id="word" value="hello"></label>
+    <button data-route="/add_word" type="button">Add word</button>
+    <button data-route="/delete_word" type="button">Delete last word</button>
+  </div>
+  <p id="message" role="status"></p>
+  <pre id="resource" aria-label="Protected resource response"></pre>
+  <p><a href="http://localhost:9001/">Authorization server</a> ·
+     <a href="http://localhost:9002/">Resource server</a></p>
+</main>
+</body>
+</html>

@@ -1,0 +1,14 @@
+plugins { id 'application' }
+
+
+
+application {
+    mainClass = 'org.oauthinaction.ch06ex05.Exercise'
+}
+
+// Exercise code must resolve assets/storage independently of the repository cwd.
+tasks.named('test') {
+    def isolatedDirectory = layout.buildDirectory.dir('test-working-directory')
+    doFirst { isolatedDirectory.get().asFile.mkdirs() }
+    workingDir = isolatedDirectory
+}

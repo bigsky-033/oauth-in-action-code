@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 11 · Consent</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="approve.js" defer></script>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Authorization server · Consent</p>
+  <h1>Allow this client access?</h1>
+  <p>Client: <strong id="client-id">Loading…</strong></p>
+  <p>This exercise uses a consent screen without a login step.</p>
+  <form action="/approve" method="post">
+    <label>User <select name="user"><option value="alice">Alice</option><option value="bob">Bob</option><option value="carol">Carol</option></select></label>
+    <input type="hidden" name="request_id" id="request-id">
+    <fieldset id="scopes"><legend>Requested scopes</legend></fieldset>
+    <div class="actions">
+      <button type="submit" name="approve" value="yes" disabled>Approve</button>
+      <button type="submit" disabled>Deny</button>
+    </div>
+  </form>
+  <p id="message" role="status"></p>
+</main>
+</body>
+</html>

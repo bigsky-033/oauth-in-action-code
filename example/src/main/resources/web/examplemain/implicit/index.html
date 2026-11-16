@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Complete example · Implicit client</title><link rel="stylesheet" href="/style.css">
+  <script src="/client.js" defer></script>
+</head>
+<body><main>
+  <p class="eyebrow">OAuth 2 in Action · Complete example · Implicit variant</p>
+  <h1>Implicit browser client</h1>
+  <p>The browser receives its token in the URL fragment and calls the resource directly.</p>
+  <dl><dt>Access token</dt><dd id="access-token">NONE</dd><dt>Scope</dt><dd id="scope">NONE</dd></dl>
+  <div class="actions"><button id="authorize">Get OAuth token</button><button id="fetch-resource">Get protected resource</button></div>
+  <p id="message" role="status"></p><pre id="resource"></pre>
+</main></body>
+</html>

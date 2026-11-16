@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 6 · Desktop Java client</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="client.js" defer></script>
+</head>
+<body>
+<main>
+  <p class="eyebrow">OAuth 2 in Action · Chapter 6, exercise 5</p>
+  <h1>Desktop Java client</h1>
+  <p>A Java desktop process receives a loopback callback and exchanges the code. The browser is its local interface.</p>
+  <p id="variant"></p>
+  <dl>
+    <dt>Access token</dt><dd id="access-token">NONE</dd>
+    <dt>Refresh token</dt><dd id="refresh-token">NONE</dd>
+    <dt>Scope</dt><dd id="scope">NONE</dd>
+  </dl>
+  <div class="actions">
+    <a class="button" href="/authorize">Get OAuth token</a>
+    <button id="fetch-resource" type="button">Get protected resource</button>
+  </div>
+  <p id="message" role="status"></p>
+  <pre id="resource" aria-label="Protected resource response"></pre>
+  <p><a href="http://localhost:9001/">Authorization server</a> ·
+     <a href="http://localhost:9002/">Resource server</a></p>
+</main>
+</body>
+</html>

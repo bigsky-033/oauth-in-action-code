@@ -1,38 +1,49 @@
-# OAuth 2 in Action
+# OAuth 2 in Action — Java 21 study edition
 
-![Cover of OAuth 2 in Action](https://images.manning.com/255/340/resize/book/e/14336f9-6493-46dc-938c-11a34c9d20ac/Richer-OAuth2-HI.png)
+The whole repository uses Java 21, Gradle, Spring MVC and plain HTML/JavaScript/CSS.
+OAuth requests, token handling and validation are explicit chapter code. There is
+no Spring Security, template engine, frontend build or database server.
 
-https://www.manning.com/books/oauth-2-in-action
+Open this root directory in IntelliJ Community as a **Gradle** project with JDK 21
+for the Project SDK and Gradle JVM. Start with:
 
-## About the book
+```sh
+./gradlew :exercises:ch-3-ex-1:run
+```
 
-Think of OAuth 2 like the web version of a valet key. This HTTP-based security protocol allows the users of a service to enable applications to use that service on their behalf without handing over full control. Web and mobile apps can securely access information from other servers for these users, enabling you to give your users functionality and services from other sites. Instead of unsafe password-sharing, OAuth offers a much more secure delegation protocol. OAuth is used everywhere, from large providers like Facebook and Google, to small APIs at startups, and even cloud services, it’s the worldwide standard. OAuth 2 is the must-know security protocol on the web today.
+Open http://localhost:9000/. In IntelliJ, run
+`org.oauthinaction.ch03ex01.completed.CompletedExercise.main()` using the gutter
+Run button. `StarterExercise.main()` or the `runStarter` task selects the exercise
+with its teaching gaps. Stop the previous example before switching: the book
+reuses client/authorization/resource ports **9000/9001/9002**.
 
-OAuth 2 in Action teaches you practical use and deployment of this protocol from the perspective of a client, authorization server, and resource server. You’ll begin with an overview of OAuth and a look at its components and interactions. Then, using lots of hands-on examples, you’ll build your first OAuth client, followed by an authorization server, and then a protected resource. The second part of the book dives into crucial implementation vulnerability topics. Then you learn about tokens, dynamic client registration, and more advanced topics. This book teaches you to how to distinguish between different OAuth options and choose the right set for your application. By the end of this book, you’ll be able to build and deploy applications that use OAuth on both the client and server sides.
+[Run every directory](docs/RUNNING.md) lists all 42 modules, their Gradle tasks,
+IntelliJ mains and starter variants. The original `exercises/`, `example/`,
+`class/`, chapter and `completed/` organization is preserved. Each module has its
+own instructions, Java package and static-resource namespace. Code and assets work
+from the repository root or another working directory.
 
-## About the authors
+```sh
+./gradlew check           # all tests and repository consistency (requires Python 3)
+./gradlew smokeLaunchers  # installed launchers; requires free ports 9000–9002
+```
 
-Justin Richer is a systems architect, software engineer, standards editor, and service designer working as an independent consultant. [Antonio Sanso](http://blog.intothesymmetry.com/) works as Security Software Engineer, he is a vulnerability security researcher and an active open source contributor.
+First use downloads Gradle and dependencies. Java examples need no Node/npm,
+Cordova or phone SDK. Native examples use a Java client with a browser loopback
+callback. The snippets directory is a runnable console demonstration.
 
-## How to Install and Run the Project
+These are book exercises: historical grants, deliberately incomplete starters and
+chapter-specific vulnerabilities are retained and explained locally. They are
+learning code. Token state resets when an authorization server starts. Read each
+lesson's README for behavior and intentional simplifications.
 
-### Clone Repository
+[MIGRATION.md](MIGRATION.md) records the checklist, verification and source fixes.
+The original JavaScript/templates are available in Git at commit
+`8d837ee48a42358fab220e911c4004530ca40e43`; for example:
 
-Using terminal go to directory of your choosing and execute ```git clone https://github.com/oauthinaction/oauth-in-action-code.git```
+```sh
+git show 8d837ee48a42358fab220e911c4004530ca40e43:exercises/ch-3-ex-1/client.js
+```
 
-### Install Dependencies
-
-Repository contains multiple project, each requiring to install its dependencies before executing any code. For each exercise, enter the directory and run ```npm install``` to install dependencies before executing the code.
-
-### Run Project
-
-To execute any file written in JavaScript using node simply run ```node [file_name]``` in terminal for eg. ```node client.js```.  
-  
-Some examples require to run multiple files concurrently to work properly (for example, the authorization server, client, and resource server components), and it is recommended that each file be executed in its own separate environment, such as in separate terminal windows.
-
-Each service runs on ```localhost``` and is usually available over HTTP.
-
-The usual ports for items is:
-* client.js - ```http://localhost:9000/```
-* authorizationServer.js - ```http://localhost:9001/```
-* protectedResource.js - ```http://localhost:9002/```
+This repository accompanies [OAuth 2 in Action](https://www.manning.com/books/oauth-2-in-action)
+by Justin Richer and Antonio Sanso. The original license is in [LICENSE.txt](LICENSE.txt).

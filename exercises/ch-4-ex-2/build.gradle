@@ -1,0 +1,20 @@
+plugins { id 'application' }
+
+sourceSets.main.java.srcDir 'completed/src/main/java'
+
+application {
+    mainClass = 'org.oauthinaction.ch04ex02.completed.CompletedExercise'
+}
+
+// Exercise code must resolve assets/storage independently of the repository cwd.
+tasks.named('test') {
+    def isolatedDirectory = layout.buildDirectory.dir('test-working-directory')
+    doFirst { isolatedDirectory.get().asFile.mkdirs() }
+    workingDir = isolatedDirectory
+}
+
+tasks.register('runStarter', JavaExec) {
+    group = 'application'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'org.oauthinaction.ch04ex02.StarterExercise'
+}

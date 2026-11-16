@@ -1,0 +1,7 @@
+plugins { id 'application' }
+application { mainClass = 'org.oauthinaction.appendixa.Exercise' }
+tasks.named('test') {
+    def isolatedDirectory = layout.buildDirectory.dir('test-working-directory')
+    doFirst { isolatedDirectory.get().asFile.mkdirs() }
+    workingDir = isolatedDirectory
+}

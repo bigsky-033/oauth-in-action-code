@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 8 · OAuth client</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="client.js" defer></script>
+</head>
+<body>
+<main>
+  <p class="eyebrow">OAuth 2 in Action · Chapter 8, exercise 3</p>
+  <h1>OAuth client</h1>
+  <p>Obtain a token, select a language, and inspect the protected JSON greeting.</p>
+  <p id="variant"></p>
+  <dl>
+    <dt>Access token</dt><dd id="access-token">NONE</dd>
+    <dt>Refresh token</dt><dd id="refresh-token">NONE</dd>
+    <dt>Scope</dt><dd id="scope">NONE</dd>
+  </dl>
+  <div class="actions">
+    <a class="button" href="/authorize">Get OAuth token</a>
+    <label>Language <select id="language"><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="fr">French</option><option value="es">Spanish</option></select></label>
+    <button id="fetch-resource" type="button">Get greeting</button>
+  <a class="button" href="/revoke">Revoke token</a><a class="button" href="/username_password">Password grant</a></div>
+  <p id="message" role="status"></p>
+  <pre id="resource" aria-label="Protected resource response"></pre>
+  <p><a href="http://localhost:9001/">Authorization server</a> ·
+     <a href="http://localhost:9002/">Resource server</a></p>
+</main>
+</body>
+</html>

@@ -1,0 +1,3 @@
+plugins { id 'application' }
+dependencies { implementation project(':class:complete') }
+application { mainClass = 'org.oauthinaction.classroomsnippets.SnippetDemo' }

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 13 · OAuth client</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="client.js" defer></script>
+</head>
+<body>
+<main>
+  <p class="eyebrow">OAuth 2 in Action · Chapter 13, exercise 1</p>
+  <h1>OAuth client</h1>
+  <p>Request permission, exchange the authorization code, then use the access token.</p>
+  <p id="variant"></p>
+  <dl>
+    <dt>Access token</dt><dd id="access-token">NONE</dd>
+    <dt>Refresh token</dt><dd id="refresh-token">NONE</dd>
+    <dt>Scope</dt><dd id="scope">NONE</dd>
+  </dl>
+  <div class="actions">
+    <a class="button" href="/authorize">Get OAuth token</a>
+    <button id="userinfo" type="button">Get UserInfo</button>
+    <button id="fetch-resource" type="button">Get protected resource</button>
+  </div>
+  <p id="message" role="status"></p>
+  <h2>ID token claims</h2><pre id="id-token"></pre>
+  <h2>Response</h2><pre id="resource" aria-label="Protected resource response"></pre>
+  <p><a href="http://localhost:9001/">Authorization server</a> ·
+     <a href="http://localhost:9002/">Resource server</a></p>
+</main>
+</body>
+</html>
